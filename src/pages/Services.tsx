@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -175,12 +176,16 @@ const Services = () => {
             Let's discuss your project requirements and how we can help bring your vision to life
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base">
-              Get Free Consultation
-            </Button>
-            <Button variant="outline" className="border-gray-300 text-gray-900 hover:bg-gray-50 px-8 py-6 text-base">
-              View Our Work
-            </Button>
+            <Link to="/contact">
+              <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base">
+                Get Free Consultation
+              </Button>
+            </Link>
+            <Link to="/portfolio">
+              <Button variant="outline" className="border-gray-300 text-gray-900 hover:bg-gray-50 px-8 py-6 text-base">
+                View Our Work
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
