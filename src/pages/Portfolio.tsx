@@ -34,7 +34,7 @@ const projects = [
     category: "Healthcare",
     featured: true,
     technologies: ["Vue.js", "Python", "MongoDB", "AWS"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&h=400&fit=crop",
   },
   {
     id: 3,
