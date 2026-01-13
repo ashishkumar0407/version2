@@ -45,10 +45,10 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-8 h-14 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-              <div className="w-1 h-3 bg-white/50 rounded-full" />
+          {/* Scroll Indicator - Mouse Icon */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div className="w-8 h-12 rounded-full border-2 border-white/40 flex items-start justify-center pt-2 bg-white/5 backdrop-blur-sm">
+              <div className="w-0.5 h-3 bg-white/60 rounded-full animate-bounce" />
             </div>
           </div>
         </div>
