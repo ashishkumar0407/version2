@@ -297,6 +297,36 @@ const About = () => {
         </div>
       </section>
 
+      {/* Global Presence */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Global <span className="text-primary">Presence</span>
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Serving clients across continents with local expertise and global standards
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+            {[
+              "India", "USA", "UK", "Canada", "Australia", "Germany",
+              "France", "Japan", "Singapore", "UAE", "Brazil", "Netherlands",
+              "Sweden", "Switzerland", "South Africa"
+            ].map((country, index) => (
+              <div 
+                key={index} 
+                className="bg-gray-50 hover:bg-primary/5 rounded-xl p-6 text-center transition-colors duration-300"
+              >
+                <div className="text-3xl mb-3">🌍</div>
+                <p className="text-gray-700 font-medium text-sm">{country}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
