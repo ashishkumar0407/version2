@@ -1,29 +1,56 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("Home");
 
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Certification", href: "#certification" },
+    { name: "Blog", href: "#blog" },
+    { name: "Careers", href: "#careers" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">H</span>
+          <a href="#home" className="flex items-center gap-3">
+            {/* Hexagon Logo with Lightbulb */}
+            <div className="relative w-12 h-12">
+              <svg viewBox="0 0 48 48" className="w-full h-full">
+                {/* Outer hexagon */}
+                <path
+                  d="M24 2 L44 14 L44 34 L24 46 L4 34 L4 14 Z"
+                  fill="none"
+                  stroke="#1a1a2e"
+                  strokeWidth="2"
+                />
+                {/* Inner hexagon */}
+                <path
+                  d="M24 8 L38 17 L38 31 L24 40 L10 31 L10 17 Z"
+                  fill="none"
+                  stroke="#1a1a2e"
+                  strokeWidth="1.5"
+                />
+                {/* Lightbulb */}
+                <circle cx="24" cy="20" r="6" fill="none" stroke="#1a1a2e" strokeWidth="1.5" />
+                <path d="M21 26 L21 30 L27 30 L27 26" fill="none" stroke="#1a1a2e" strokeWidth="1.5" />
+                <line x1="22" y1="32" x2="26" y2="32" stroke="#1a1a2e" strokeWidth="1.5" />
+                <line x1="24" y1="14" x2="24" y2="16" stroke="#1a1a2e" strokeWidth="1.5" />
+              </svg>
             </div>
-            <span className="text-xl font-bold text-foreground">Hexsoftwares</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-gray-900 tracking-wide">HEX SOFTWARES</span>
+              <span className="text-[10px] text-gray-500 tracking-[0.2em]">INNOVATE | CONNECT | INSPIRE</span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
@@ -32,15 +59,26 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+                onClick={() => setActiveLink(link.name)}
+                className={`relative text-sm font-medium transition-colors duration-200 py-2 ${
+                  activeLink === link.name
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
               >
                 {link.name}
+                {activeLink === link.name && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                )}
               </a>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* Right Section */}
+          <div className="hidden lg:flex items-center gap-4">
+            <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors">
+              <Moon className="w-5 h-5" />
+            </button>
             <Button variant="hero" size="default">
               Enroll Now
             </Button>
@@ -48,7 +86,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-foreground p-2"
+            className="lg:hidden text-gray-900 p-2"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -58,21 +96,33 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
+          <div className="lg:hidden py-4 border-t border-gray-100 bg-white">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 py-2"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setActiveLink(link.name);
+                    setIsOpen(false);
+                  }}
+                  className={`py-2 px-4 rounded-lg transition-colors duration-200 ${
+                    activeLink === link.name
+                      ? "text-primary bg-primary/5"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                  }`}
                 >
                   {link.name}
                 </a>
               ))}
-              <Button variant="hero" size="default" className="mt-2">
-                Enroll Now
-              </Button>
+              <div className="flex items-center gap-4 mt-4 px-4">
+                <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors">
+                  <Moon className="w-5 h-5" />
+                </button>
+                <Button variant="hero" size="default" className="flex-1">
+                  Enroll Now
+                </Button>
+              </div>
             </div>
           </div>
         )}
