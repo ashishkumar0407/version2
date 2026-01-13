@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import StatsSection from "@/components/StatsSection";
 import TrustedBySection from "@/components/TrustedBySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import InternTestimonialsSection from "@/components/InternTestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingChatButton from "@/components/FloatingChatButton";
@@ -19,6 +20,7 @@ const Index = () => {
       <StatsSection />
       <TrustedBySection />
       <TestimonialsSection />
+      <InternTestimonialsSection />
       <CTASection />
       <Footer />
       <FloatingChatButton />
