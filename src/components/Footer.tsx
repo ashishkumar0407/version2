@@ -7,6 +7,7 @@ import {
   Phone, 
   MapPin
 } from "lucide-react";
+import bigbetsLogo from "@/assets/bigbets-logo.png";
 
 const Footer = () => {
   const services = [
@@ -50,9 +51,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <a href="#home" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
+              <img src={bigbetsLogo} alt="Bigbets.Ai Logo" className="w-10 h-10 object-contain" />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-gray-900">BIGBETS.AI</span>
                 <span className="text-[10px] text-gray-500 tracking-wider">INNOVATE | CONNECT | INSPIRE</span>

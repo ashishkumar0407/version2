@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon } from "lucide-react";
+import bigbetsLogo from "@/assets/bigbets-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,32 +46,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3">
-            {/* Hexagon Logo with Lightbulb */}
-            <div className="relative w-12 h-12">
-              <svg viewBox="0 0 48 48" className="w-full h-full">
-                {/* Outer hexagon */}
-                <path
-                  d="M24 2 L44 14 L44 34 L24 46 L4 34 L4 14 Z"
-                  fill="none"
-                  stroke={isScrolled ? "#1a1a2e" : "#ffffff"}
-                  strokeWidth="2"
-                  className="transition-all duration-300"
-                />
-                {/* Inner hexagon */}
-                <path
-                  d="M24 8 L38 17 L38 31 L24 40 L10 31 L10 17 Z"
-                  fill="none"
-                  stroke={isScrolled ? "#1a1a2e" : "#ffffff"}
-                  strokeWidth="1.5"
-                  className="transition-all duration-300"
-                />
-                {/* Lightbulb */}
-                <circle cx="24" cy="20" r="6" fill="none" stroke={isScrolled ? "#1a1a2e" : "#ffffff"} strokeWidth="1.5" className="transition-all duration-300" />
-                <path d="M21 26 L21 30 L27 30 L27 26" fill="none" stroke={isScrolled ? "#1a1a2e" : "#ffffff"} strokeWidth="1.5" className="transition-all duration-300" />
-                <line x1="22" y1="32" x2="26" y2="32" stroke={isScrolled ? "#1a1a2e" : "#ffffff"} strokeWidth="1.5" className="transition-all duration-300" />
-                <line x1="24" y1="14" x2="24" y2="16" stroke={isScrolled ? "#1a1a2e" : "#ffffff"} strokeWidth="1.5" className="transition-all duration-300" />
-              </svg>
-            </div>
+            <img src={bigbetsLogo} alt="Bigbets.Ai Logo" className="w-10 h-10 object-contain" />
             <div className="flex flex-col">
               <span className={`text-xl font-bold tracking-wide transition-colors duration-300 ${isScrolled ? "text-gray-900" : "text-white"}`}>Bigbets.Ai</span>
               <span className={`text-[10px] tracking-[0.2em] transition-colors duration-300 ${isScrolled ? "text-gray-500" : "text-gray-300"}`}>INNOVATE | CONNECT | INSPIRE</span>
