@@ -14,8 +14,8 @@ const HeroSection = () => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* Blue overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-gray-900/60" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
