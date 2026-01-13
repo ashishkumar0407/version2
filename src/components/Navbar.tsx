@@ -86,7 +86,9 @@ const Navbar = () => {
                   to={link.href}
                   className={`relative text-sm font-medium transition-colors duration-200 py-2 ${
                     isActive(link)
-                      ? "text-primary"
+                      ? isScrolled 
+                        ? "text-primary" 
+                        : "text-white"
                       : isScrolled 
                         ? "text-gray-600 hover:text-gray-900" 
                         : "text-white/80 hover:text-white"
@@ -94,7 +96,7 @@ const Navbar = () => {
                 >
                   {link.name}
                   {isActive(link) && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                    <span className={`absolute bottom-0 left-0 right-0 h-0.5 rounded-full ${isScrolled ? "bg-primary" : "bg-white"}`} />
                   )}
                 </Link>
               ) : (
