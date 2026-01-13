@@ -73,21 +73,20 @@ const AboutSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
                 {/* BIGBET.AI Logo in top right */}
-                <div className="absolute top-6 right-6 flex items-center gap-2">
-                  <div className="w-10 h-10">
+                <div className="absolute top-6 right-6 flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2">
+                  <div className="w-8 h-8">
                     <svg viewBox="0 0 48 48" className="w-full h-full">
                       <path
                         d="M24 2 L44 14 L44 34 L24 46 L4 34 L4 14 Z"
                         fill="none"
                         stroke="white"
-                        strokeWidth="1.5"
-                        opacity="0.8"
+                        strokeWidth="2"
                       />
-                      <circle cx="24" cy="20" r="5" fill="none" stroke="white" strokeWidth="1.5" opacity="0.8" />
-                      <path d="M21 25 L21 28 L27 28 L27 25" fill="none" stroke="white" strokeWidth="1.5" opacity="0.8" />
+                      <circle cx="24" cy="20" r="5" fill="none" stroke="white" strokeWidth="2" />
+                      <path d="M21 25 L21 28 L27 28 L27 25" fill="none" stroke="white" strokeWidth="2" />
                     </svg>
                   </div>
-                  <span className="text-white/80 text-sm font-medium tracking-wide">BIGBET.AI</span>
+                  <span className="text-white text-sm font-semibold tracking-wide">BIGBET.AI</span>
                 </div>
 
                 {/* Glass Card Overlay */}
