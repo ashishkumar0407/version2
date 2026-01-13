@@ -46,12 +46,12 @@ const Certification = () => {
       </section>
 
       {/* Verification Form */}
-      <section className="py-16 md:py-24 bg-gray-900 border-t-4 border-t-primary">
+      <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+          <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
             <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="w-10 h-10 text-primary" strokeWidth={1.5} />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                 Verify Your Certificate
@@ -69,14 +69,14 @@ const Certification = () => {
                   placeholder="Enter Certificate ID (e.g., BB-WD-12345)"
                   value={certificateId}
                   onChange={(e) => setCertificateId(e.target.value)}
-                  className="pl-12 h-12 bg-gray-900 border-gray-700 text-white placeholder:text-gray-400 focus:border-primary"
+                  className="pl-12 h-12 bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-primary"
                   onKeyDown={(e) => e.key === "Enter" && handleVerify()}
                 />
               </div>
               <Button
                 onClick={handleVerify}
                 disabled={isVerifying || !certificateId.trim()}
-                className="bg-blue-200 hover:bg-blue-300 text-primary h-12 px-6 flex items-center gap-2 font-medium"
+                className="bg-primary hover:bg-primary/90 text-white h-12 px-6 flex items-center gap-2 font-medium"
               >
                 <Search className="w-4 h-4" />
                 {isVerifying ? "Verifying..." : "Verify"}
