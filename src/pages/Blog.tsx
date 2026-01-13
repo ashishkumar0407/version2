@@ -119,7 +119,7 @@ const Blog = () => {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 h-10 w-40 border-gray-300"
+                className="pl-10 h-10 w-40 bg-white border-gray-300 text-gray-900 placeholder:text-gray-400"
               />
             </div>
             {categories.map((category) => (
