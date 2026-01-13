@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,15 +18,22 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Certification", href: "#certification" },
-    { name: "Blog", href: "#blog" },
-    { name: "Careers", href: "#careers" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/", isRoute: true },
+    { name: "About", href: "/#about", isRoute: false },
+    { name: "Services", href: "/services", isRoute: true },
+    { name: "Portfolio", href: "/#portfolio", isRoute: false },
+    { name: "Certification", href: "/#certification", isRoute: false },
+    { name: "Blog", href: "/#blog", isRoute: false },
+    { name: "Careers", href: "/#careers", isRoute: false },
+    { name: "Contact", href: "/#contact", isRoute: false },
   ];
+
+  const isActive = (link: typeof navLinks[0]) => {
+    if (link.isRoute) {
+      return location.pathname === link.href;
+    }
+    return false;
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -72,23 +80,36 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setActiveLink(link.name)}
-                className={`relative text-sm font-medium transition-colors duration-200 py-2 ${
-                  activeLink === link.name
-                    ? "text-primary"
-                    : isScrolled 
+              link.isRoute ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={`relative text-sm font-medium transition-colors duration-200 py-2 ${
+                    isActive(link)
+                      ? "text-primary"
+                      : isScrolled 
+                        ? "text-gray-600 hover:text-gray-900" 
+                        : "text-white/80 hover:text-white"
+                  }`}
+                >
+                  {link.name}
+                  {isActive(link) && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  )}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`relative text-sm font-medium transition-colors duration-200 py-2 ${
+                    isScrolled 
                       ? "text-gray-600 hover:text-gray-900" 
                       : "text-white/80 hover:text-white"
-                }`}
-              >
-                {link.name}
-                {activeLink === link.name && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
-                )}
-              </a>
+                  }`}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </div>
 
@@ -117,21 +138,29 @@ const Navbar = () => {
           <div className="lg:hidden py-4 border-t border-gray-100 bg-white">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => {
-                    setActiveLink(link.name);
-                    setIsOpen(false);
-                  }}
-                  className={`py-2 px-4 rounded-lg transition-colors duration-200 ${
-                    activeLink === link.name
-                      ? "text-primary bg-primary/5"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                  }`}
-                >
-                  {link.name}
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`py-2 px-4 rounded-lg transition-colors duration-200 ${
+                      isActive(link)
+                        ? "text-primary bg-primary/5"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="py-2 px-4 rounded-lg transition-colors duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
               <div className="flex items-center gap-4 mt-4 px-4">
                 <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors">
