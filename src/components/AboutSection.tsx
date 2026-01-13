@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Users, Globe, Trophy, Zap } from "lucide-react";
+import ceoImage from "@/assets/ceo-kaptan.png";
 
 const AboutSection = () => {
   const features = [
@@ -60,12 +61,18 @@ const AboutSection = () => {
           {/* Right Content - CEO Card with Image */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden">
-              {/* CEO Image - Using a placeholder professional image */}
-              <div className="aspect-[4/5] bg-gradient-to-br from-gray-700 to-gray-900 relative">
-                {/* Placeholder image simulation with gradient and pattern */}
+              {/* CEO Image */}
+              <div className="aspect-[4/5] relative">
+                <img 
+                  src={ceoImage} 
+                  alt="Mr. Kaptan - Founder & CEO" 
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
-                {/* HEX SOFTWARES Logo in top right */}
+                {/* BIGBET.AI Logo in top right */}
                 <div className="absolute top-6 right-6 flex items-center gap-2">
                   <div className="w-10 h-10">
                     <svg viewBox="0 0 48 48" className="w-full h-full">
@@ -81,16 +88,6 @@ const AboutSection = () => {
                     </svg>
                   </div>
                   <span className="text-white/80 text-sm font-medium tracking-wide">BIGBET.AI</span>
-                </div>
-
-                {/* Person silhouette/placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-48 h-64 bg-gradient-to-b from-gray-600 to-gray-800 rounded-t-full relative top-16">
-                    {/* Head */}
-                    <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-24 h-28 bg-gradient-to-b from-amber-200 to-amber-300 rounded-full" />
-                    {/* Suit */}
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-800 to-gray-900 rounded-t-3xl" />
-                  </div>
                 </div>
 
                 {/* Glass Card Overlay */}
