@@ -45,12 +45,6 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Scroll Indicator - Mouse Icon */}
-          <div className="mt-16 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <div className="w-8 h-12 rounded-full border-2 border-white/40 flex items-start justify-center pt-2 bg-white/5 backdrop-blur-sm">
-              <div className="w-0.5 h-3 bg-white/60 rounded-full animate-bounce" />
-            </div>
-          </div>
         </div>
       </div>
     </section>
