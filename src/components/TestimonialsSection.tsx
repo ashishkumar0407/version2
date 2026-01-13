@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
-
+import testimonialAvatar from "@/assets/testimonial-avatar.png";
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -80,9 +80,11 @@ const TestimonialsSection = () => {
 
             {/* Author Info */}
             <div className="flex items-center justify-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gray-300 flex items-center justify-center">
-                <span className="text-sm font-semibold text-gray-600">{currentTestimonial.avatar}</span>
-              </div>
+              <img 
+                src={testimonialAvatar} 
+                alt={currentTestimonial.name}
+                className="w-14 h-14 rounded-full object-cover"
+              />
               <div className="text-left">
                 <h4 className="font-semibold text-gray-900">{currentTestimonial.name}</h4>
                 <p className="text-sm text-gray-500">{currentTestimonial.role}</p>
