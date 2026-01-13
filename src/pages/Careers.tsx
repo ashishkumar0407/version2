@@ -3,47 +3,47 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { 
-  Briefcase, 
+  Coffee, 
   GraduationCap, 
   Users, 
   MapPin, 
   Clock, 
-  DollarSign,
   Heart,
-  Zap,
-  Globe
+  Award,
+  Building,
+  Zap
 } from "lucide-react";
 
 const benefits = [
   {
-    icon: Briefcase,
+    icon: Coffee,
     title: "Flexible Work Environment",
-    description: "Work from anywhere with flexible hours that suit your lifestyle and maximize your productivity.",
+    description: "Remote work options and flexible hours",
   },
   {
     icon: GraduationCap,
     title: "Learning & Development",
-    description: "Continuous learning opportunities with access to courses, conferences, and mentorship programs.",
+    description: "Continuous learning opportunities and skill development",
   },
   {
     icon: Users,
     title: "Collaborative Culture",
-    description: "Work with talented professionals in a supportive environment that values teamwork and innovation.",
+    description: "Work with talented professionals in a supportive environment",
   },
   {
     icon: Heart,
     title: "Health & Wellness",
-    description: "Comprehensive health insurance and wellness programs to keep you and your family healthy.",
+    description: "Comprehensive health benefits and wellness programs",
   },
   {
-    icon: DollarSign,
-    title: "Competitive Compensation",
-    description: "Industry-leading salaries with performance bonuses and equity options for all team members.",
+    icon: Award,
+    title: "Recognition & Growth",
+    description: "Performance-based recognition and career advancement",
   },
   {
-    icon: Globe,
-    title: "Global Opportunities",
-    description: "Work on international projects and collaborate with teams across different countries.",
+    icon: Building,
+    title: "Exciting Projects",
+    description: "Work on cutting-edge projects with global clients",
   },
 ];
 
@@ -135,17 +135,17 @@ const Careers = () => {
               Join a company that values innovation, growth, and work-life balance
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
+                className="bg-gray-50 p-8 rounded-xl border-b-4 border-transparent hover:border-primary/20 transition-all duration-300 text-center"
               >
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <benefit.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                <p className="text-gray-600 text-sm">{benefit.description}</p>
               </div>
             ))}
           </div>
