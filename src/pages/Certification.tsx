@@ -76,7 +76,7 @@ const Certification = () => {
               <Button
                 onClick={handleVerify}
                 disabled={isVerifying || !certificateId.trim()}
-                className="bg-primary hover:bg-primary/90 text-white h-14 px-8 flex items-center gap-2 font-medium rounded-md"
+                className="bg-blue-300 hover:bg-blue-400 text-white h-14 px-8 flex items-center gap-2 font-medium rounded-lg"
               >
                 <Search className="w-4 h-4" />
                 {isVerifying ? "Verifying..." : "Verify"}
