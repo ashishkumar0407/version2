@@ -153,8 +153,8 @@ const Footer = () => {
             © 2026 Bigbets.Ai. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-primary hover:underline transition-colors">Privacy Policy</a>
-            <a href="#" className="text-primary hover:underline transition-colors">Terms of Service</a>
+            <a href="/privacy-policy" className="text-primary hover:underline transition-colors">Privacy Policy</a>
+            <a href="/terms-of-service" className="text-primary hover:underline transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
