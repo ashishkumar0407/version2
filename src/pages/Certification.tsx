@@ -69,14 +69,14 @@ const Certification = () => {
                   placeholder="Enter Certificate ID (e.g., BB-WD-12345)"
                   value={certificateId}
                   onChange={(e) => setCertificateId(e.target.value)}
-                  className="pl-12 h-12 bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-primary"
+                  className="pl-12 h-14 bg-white border-2 border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-md"
                   onKeyDown={(e) => e.key === "Enter" && handleVerify()}
                 />
               </div>
               <Button
                 onClick={handleVerify}
                 disabled={isVerifying || !certificateId.trim()}
-                className="bg-primary hover:bg-primary/90 text-white h-12 px-6 flex items-center gap-2 font-medium"
+                className="bg-primary hover:bg-primary/90 text-white h-14 px-8 flex items-center gap-2 font-medium rounded-md"
               >
                 <Search className="w-4 h-4" />
                 {isVerifying ? "Verifying..." : "Verify"}
