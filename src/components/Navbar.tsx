@@ -48,7 +48,7 @@ const Navbar = () => {
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900 tracking-wide">HEX SOFTWARES</span>
+              <span className="text-xl font-bold text-gray-900 tracking-wide">Bigbet.Ai</span>
               <span className="text-[10px] text-gray-500 tracking-[0.2em]">INNOVATE | CONNECT | INSPIRE</span>
             </div>
           </a>
