@@ -152,6 +152,52 @@ const Careers = () => {
         </div>
       </section>
 
+      {/* Application Process Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Application <span className="text-primary">Process</span>
+            </h2>
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+              Simple and transparent hiring process
+            </p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                step: 1,
+                title: "Apply Online",
+                description: "Submit your application through our portal",
+              },
+              {
+                step: 2,
+                title: "Initial Review",
+                description: "Our team reviews your application and portfolio",
+              },
+              {
+                step: 3,
+                title: "Interview",
+                description: "Technical and cultural fit assessment",
+              },
+              {
+                step: 4,
+                title: "Welcome Aboard",
+                description: "Join our team and start your journey",
+              },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-white">{item.step}</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Open Positions Section */}
       <section id="positions" className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
