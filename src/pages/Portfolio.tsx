@@ -126,7 +126,7 @@ const Portfolio = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 border-b border-gray-200">
+      <section className="py-12 bg-white border-t-4 border-t-primary border-b border-b-gray-200">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
