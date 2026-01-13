@@ -1,9 +1,9 @@
-import { CheckCircle, Globe2, Award, Clock } from "lucide-react";
+import { Trophy, Globe2, Users, Clock } from "lucide-react";
 
 const StatsSection = () => {
   const stats = [
     {
-      icon: CheckCircle,
+      icon: Trophy,
       value: "200+",
       label: "Projects Completed",
       description: "Successfully delivered projects across various industries",
@@ -15,7 +15,7 @@ const StatsSection = () => {
       description: "Global presence with clients worldwide",
     },
     {
-      icon: Award,
+      icon: Users,
       value: "100%",
       label: "Client Satisfaction",
       description: "Maintaining highest standards of quality and service",
@@ -29,17 +29,14 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 hero-glow" />
-      
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section className="py-24 bg-blue-600">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="section-title mb-4">
-            Our Impact in <span className="gradient-text">Numbers</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Our Impact in Numbers
           </h2>
-          <p className="section-subtitle mx-auto">
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto">
             Delivering excellence and building lasting partnerships worldwide
           </p>
         </div>
@@ -47,28 +44,26 @@ const StatsSection = () => {
         {/* Stats Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="relative group text-center p-8 rounded-2xl bg-card border border-border card-hover"
-            >
-              {/* Background Glow on Hover */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              <div className="relative">
-                <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-6 glow-effect">
-                  <stat.icon className="w-8 h-8 text-primary-foreground" />
-                </div>
-                
-                <div className="stat-number mb-2">{stat.value}</div>
-                
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {stat.label}
-                </h3>
-                
-                <p className="text-sm text-muted-foreground">
-                  {stat.description}
-                </p>
+            <div key={index} className="text-center">
+              {/* Icon Circle */}
+              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
+                <stat.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
               </div>
+              
+              {/* Value */}
+              <div className="text-5xl md:text-6xl font-bold text-white mb-3">
+                {stat.value}
+              </div>
+              
+              {/* Label */}
+              <h3 className="text-lg font-semibold text-white mb-2">
+                {stat.label}
+              </h3>
+              
+              {/* Description */}
+              <p className="text-sm text-blue-100">
+                {stat.description}
+              </p>
             </div>
           ))}
         </div>
