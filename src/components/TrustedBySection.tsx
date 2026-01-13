@@ -28,7 +28,7 @@ const TrustedBySection = () => {
           {companies.map((company, index) => (
             <span
               key={index}
-              className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors cursor-default"
+              className="text-gray-400 text-lg font-medium hover:text-primary transition-colors cursor-default"
             >
               {company}
             </span>
