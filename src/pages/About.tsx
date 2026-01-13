@@ -8,24 +8,24 @@ import ceoImage from "@/assets/ceo-kaptan.png";
 const About = () => {
   const values = [
     {
-      icon: Lightbulb,
+      icon: Target,
       title: "Innovation",
-      description: "We constantly push boundaries to deliver cutting-edge solutions.",
+      description: "We constantly push boundaries to deliver cutting-edge solutions that drive business growth.",
     },
     {
       icon: Users,
       title: "Collaboration",
-      description: "We work closely with clients to understand and exceed expectations.",
-    },
-    {
-      icon: Target,
-      title: "Excellence",
-      description: "Quality and precision are at the core of everything we do.",
+      description: "We believe in working closely with our clients to understand their unique needs and challenges.",
     },
     {
       icon: Award,
-      title: "Integrity",
-      description: "We maintain transparency and honesty in all our dealings.",
+      title: "Excellence",
+      description: "We maintain the highest standards of quality in every project we undertake.",
+    },
+    {
+      icon: Eye,
+      title: "Transparency",
+      description: "We maintain open communication and provide clear insights throughout the development process.",
     },
   ];
 
@@ -120,24 +120,21 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Core <span className="text-primary">Values</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Our Core Values
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              The principles that guide everything we do
-            </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <div key={index} className="text-center p-6">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="w-8 h-8 text-primary" />
+              <div key={index} className="bg-white rounded-2xl border border-gray-100 p-8 text-center shadow-sm">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                  <value.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-500 text-sm">{value.description}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
