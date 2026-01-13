@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Star, GraduationCap, ChevronLeft, ChevronRight } from "lucide-react";
 import testimonialAvatar from "@/assets/testimonial-avatar.png";
 
 const InternTestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const AUTO_SWIPE_INTERVAL = 5000; // 5 seconds
 
   const testimonials = [
     {
@@ -26,13 +28,30 @@ const InternTestimonialsSection = () => {
     },
   ];
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
+  const changeTestimonial = useCallback((newIndex: number) => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setIsAnimating(false);
+    }, 150);
+  }, []);
+
+  const nextTestimonial = useCallback(() => {
+    changeTestimonial((currentIndex + 1) % testimonials.length);
+  }, [currentIndex, testimonials.length, changeTestimonial]);
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    changeTestimonial((currentIndex - 1 + testimonials.length) % testimonials.length);
   };
+
+  // Auto-swipe effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextTestimonial();
+    }, AUTO_SWIPE_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [nextTestimonial]);
 
   const currentTestimonial = testimonials[currentIndex];
 
@@ -51,48 +70,57 @@ const InternTestimonialsSection = () => {
 
         {/* Testimonial Carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-gray-50 rounded-2xl p-8 md:p-12">
-            {/* Graduation Cap Icon */}
-            <div className="flex justify-center mb-6">
-              <GraduationCap className="w-12 h-12 text-primary/50" />
-            </div>
+          <div className="relative bg-gray-50 rounded-2xl p-8 md:p-12 overflow-hidden">
+            {/* Animated Content */}
+            <div 
+              className={`transition-all duration-300 ease-out ${
+                isAnimating 
+                  ? "opacity-0 translate-y-4" 
+                  : "opacity-100 translate-y-0"
+              }`}
+            >
+              {/* Graduation Cap Icon */}
+              <div className="flex justify-center mb-6">
+                <GraduationCap className="w-12 h-12 text-primary/50" />
+              </div>
 
-            {/* Stars */}
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
+              {/* Stars */}
+              <div className="flex justify-center gap-1 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
 
-            {/* Quote Text */}
-            <p className="text-gray-600 text-lg md:text-xl text-center italic mb-8 leading-relaxed">
-              &quot;{currentTestimonial.quote}&quot;
-            </p>
+              {/* Quote Text */}
+              <p className="text-gray-600 text-lg md:text-xl text-center italic mb-8 leading-relaxed">
+                &quot;{currentTestimonial.quote}&quot;
+              </p>
 
-            {/* Author Info */}
-            <div className="flex items-center justify-center gap-4">
-              <img 
-                src={testimonialAvatar} 
-                alt={currentTestimonial.name}
-                className="w-14 h-14 rounded-full object-cover"
-              />
-              <div className="text-left">
-                <h4 className="font-semibold text-gray-900">{currentTestimonial.name}</h4>
-                <p className="text-sm text-gray-500">{currentTestimonial.role}</p>
+              {/* Author Info */}
+              <div className="flex items-center justify-center gap-4">
+                <img 
+                  src={testimonialAvatar} 
+                  alt={currentTestimonial.name}
+                  className="w-14 h-14 rounded-full object-cover"
+                />
+                <div className="text-left">
+                  <h4 className="font-semibold text-gray-900">{currentTestimonial.name}</h4>
+                  <p className="text-sm text-gray-500">{currentTestimonial.role}</p>
+                </div>
               </div>
             </div>
 
             {/* Navigation Arrows */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5 text-gray-600" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5 text-gray-600" />
@@ -104,7 +132,7 @@ const InternTestimonialsSection = () => {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => changeTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentIndex ? "bg-primary" : "bg-gray-300"
                 }`}
