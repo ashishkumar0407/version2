@@ -311,16 +311,28 @@ const About = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
             {[
-              "India", "USA", "UK", "Canada", "Australia", "Germany",
-              "France", "Japan", "Singapore", "UAE", "Brazil", "Netherlands",
-              "Sweden", "Switzerland", "South Africa"
+              { name: "India", flag: "🇮🇳" },
+              { name: "USA", flag: "🇺🇸" },
+              { name: "UK", flag: "🇬🇧" },
+              { name: "Canada", flag: "🇨🇦" },
+              { name: "Australia", flag: "🇦🇺" },
+              { name: "Germany", flag: "🇩🇪" },
+              { name: "France", flag: "🇫🇷" },
+              { name: "Japan", flag: "🇯🇵" },
+              { name: "Singapore", flag: "🇸🇬" },
+              { name: "UAE", flag: "🇦🇪" },
+              { name: "Brazil", flag: "🇧🇷" },
+              { name: "Netherlands", flag: "🇳🇱" },
+              { name: "Sweden", flag: "🇸🇪" },
+              { name: "Switzerland", flag: "🇨🇭" },
+              { name: "South Africa", flag: "🇿🇦" }
             ].map((country, index) => (
               <div 
                 key={index} 
                 className="bg-gray-50 hover:bg-primary/5 rounded-xl p-6 text-center transition-colors duration-300"
               >
-                <div className="text-3xl mb-3">🌍</div>
-                <p className="text-gray-700 font-medium text-sm">{country}</p>
+                <div className="text-4xl mb-3">{country.flag}</div>
+                <p className="text-gray-700 font-medium text-sm">{country.name}</p>
               </div>
             ))}
           </div>
