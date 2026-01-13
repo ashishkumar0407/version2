@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: "Home", href: "/", isRoute: true },
     { name: "About", href: "/about", isRoute: true },
     { name: "Services", href: "/services", isRoute: true },
-    { name: "Portfolio", href: "/#portfolio", isRoute: false },
+    { name: "Portfolio", href: "/portfolio", isRoute: true },
     { name: "Certification", href: "/#certification", isRoute: false },
     { name: "Blog", href: "/#blog", isRoute: false },
     { name: "Careers", href: "/#careers", isRoute: false },
