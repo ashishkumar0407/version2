@@ -35,12 +35,12 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <Button variant="hero" size="xl">
-              Enroll Now
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base rounded-lg flex items-center gap-3 font-medium">
+              <span className="underline underline-offset-4">Enroll Now</span>
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-md flex items-center gap-2">
-              <Play className="w-5 h-5" />
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base rounded-lg flex items-center gap-3 font-medium">
+              <Play className="w-5 h-5" strokeWidth={1.5} />
               Our Services
             </Button>
           </div>
