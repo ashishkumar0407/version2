@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingChatButton from "@/components/FloatingChatButton";
-import { Users, Target, Lightbulb, Award, Globe, Zap } from "lucide-react";
+import { Users, Target, Lightbulb, Award, Globe, Zap, MapPin, Calendar, Eye } from "lucide-react";
 import officeImage from "@/assets/office-workspace.png";
 import ceoImage from "@/assets/ceo-kaptan.png";
 
@@ -61,9 +61,21 @@ const About = () => {
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Bigbet.Ai was founded with a simple yet powerful vision: to bridge the gap between innovative technology and real-world business solutions. Led by Mr. Kaptan, an experienced AI Engineer and visionary CEO, we have grown from a small startup to a globally recognized software development company.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 Our journey began in Ghaziabad, India, and has since expanded to serve clients across 15+ countries. With over 200 successful projects under our belt, we continue to push the boundaries of what's possible in software development, AI, and digital transformation.
               </p>
+              
+              {/* Location & Founded Info */}
+              <div className="flex flex-wrap items-center gap-6 text-gray-500">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  <span className="text-sm">Crossing Republik, Ghaziabad, India</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  <span className="text-sm">Founded in 2023</span>
+                </div>
+              </div>
             </div>
             <div className="relative">
               <img 
@@ -77,25 +89,30 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Our <span className="text-primary">Mission & Vision</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                 <Target className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                To empower businesses worldwide with innovative technology solutions that drive growth, efficiency, and competitive advantage. We are committed to delivering excellence in every project we undertake.
+                To empower businesses worldwide with innovative, scalable, and reliable technology solutions that drive growth, efficiency, and digital transformation. We strive to be the trusted partner that helps organizations navigate the complexities of the digital age.
               </p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                <Globe className="w-7 h-7 text-primary" />
+                <Eye className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
-                To become a global leader in digital transformation, recognized for our innovative solutions, exceptional talent, and unwavering commitment to client success. We envision a future where technology seamlessly enhances every aspect of business.
+                To be the global leader in innovative software solutions, recognized for our expertise in AI, cloud technologies, and digital transformation. We envision a future where technology seamlessly integrates with business processes to create unprecedented value and opportunities.
               </p>
             </div>
           </div>
