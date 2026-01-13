@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Filter } from "lucide-react";
 
 const categories = [
   "All Projects",
@@ -133,13 +133,14 @@ const Portfolio = () => {
               <Button
                 key={category}
                 variant={activeCategory === category ? "default" : "outline"}
-                className={`${
+                className={`flex items-center gap-2 ${
                   activeCategory === category
                     ? "bg-primary text-white"
                     : "border-gray-300 text-gray-700 hover:bg-gray-50"
                 }`}
                 onClick={() => setActiveCategory(category)}
               >
+                <Filter className="w-4 h-4" />
                 {category}
               </Button>
             ))}
