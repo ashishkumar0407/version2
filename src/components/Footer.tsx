@@ -66,18 +66,18 @@ const Footer = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-gray-400" />
-                <span className="text-gray-500 text-sm">Ramadevi, Kanpur, India</span>
+                <span className="text-gray-500 text-sm">Crossing Republik, Ghaziabad, India</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-gray-400" />
-                <a href="tel:+918052432951" className="text-gray-500 text-sm hover:text-primary transition-colors">
-                  +91 8052432951
+                <a href="tel:+918368871848" className="text-gray-500 text-sm hover:text-primary transition-colors">
+                  +91 836 887 1848
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gray-400" />
-                <a href="mailto:info@bigbet.ai" className="text-gray-500 text-sm hover:text-primary transition-colors">
-                  info@bigbet.ai
+                <a href="mailto:contact@bigbets.ai" className="text-gray-500 text-sm hover:text-primary transition-colors">
+                  contact@bigbets.ai
                 </a>
               </div>
             </div>
