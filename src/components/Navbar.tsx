@@ -25,7 +25,7 @@ const Navbar = () => {
     { name: "Portfolio", href: "/portfolio", isRoute: true },
     { name: "Certification", href: "/certification", isRoute: true },
     { name: "Blog", href: "/blog", isRoute: true },
-    { name: "Careers", href: "/#careers", isRoute: false },
+    { name: "Careers", href: "/careers", isRoute: true },
     { name: "Contact", href: "/#contact", isRoute: false },
   ];
 
