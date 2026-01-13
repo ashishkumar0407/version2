@@ -1,0 +1,220 @@
+import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { 
+  Briefcase, 
+  GraduationCap, 
+  Users, 
+  MapPin, 
+  Clock, 
+  DollarSign,
+  Heart,
+  Zap,
+  Globe
+} from "lucide-react";
+
+const benefits = [
+  {
+    icon: Briefcase,
+    title: "Flexible Work Environment",
+    description: "Work from anywhere with flexible hours that suit your lifestyle and maximize your productivity.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Learning & Development",
+    description: "Continuous learning opportunities with access to courses, conferences, and mentorship programs.",
+  },
+  {
+    icon: Users,
+    title: "Collaborative Culture",
+    description: "Work with talented professionals in a supportive environment that values teamwork and innovation.",
+  },
+  {
+    icon: Heart,
+    title: "Health & Wellness",
+    description: "Comprehensive health insurance and wellness programs to keep you and your family healthy.",
+  },
+  {
+    icon: DollarSign,
+    title: "Competitive Compensation",
+    description: "Industry-leading salaries with performance bonuses and equity options for all team members.",
+  },
+  {
+    icon: Globe,
+    title: "Global Opportunities",
+    description: "Work on international projects and collaborate with teams across different countries.",
+  },
+];
+
+const openPositions = [
+  {
+    id: 1,
+    title: "Senior Full Stack Developer",
+    department: "Engineering",
+    location: "Remote",
+    type: "Full-time",
+  },
+  {
+    id: 2,
+    title: "UI/UX Designer",
+    department: "Design",
+    location: "Remote",
+    type: "Full-time",
+  },
+  {
+    id: 3,
+    title: "DevOps Engineer",
+    department: "Engineering",
+    location: "Remote",
+    type: "Full-time",
+  },
+  {
+    id: 4,
+    title: "Product Manager",
+    department: "Product",
+    location: "Remote",
+    type: "Full-time",
+  },
+  {
+    id: 5,
+    title: "Data Scientist",
+    department: "Data",
+    location: "Remote",
+    type: "Full-time",
+  },
+  {
+    id: 6,
+    title: "Marketing Specialist",
+    department: "Marketing",
+    location: "Remote",
+    type: "Full-time",
+  },
+];
+
+const Careers = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-primary via-primary to-blue-600 py-20 md:py-28">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Join Our Team
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8">
+            Build your career with innovative projects and cutting-edge technologies. We welcome talent from all over the world.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#positions">
+              <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-base font-medium">
+                View Open Positions
+              </Button>
+            </a>
+            <a href="#culture">
+              <Button
+                variant="outline"
+                className="border-white text-primary bg-white hover:bg-gray-100 px-8 py-6 text-base font-medium"
+              >
+                Learn About Our Culture
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Join Us Section */}
+      <section id="culture" className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Why <span className="text-primary">Bigbets.Ai</span>?
+            </h2>
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+              Join a company that values innovation, growth, and work-life balance
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <benefit.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Open Positions Section */}
+      <section id="positions" className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Open <span className="text-primary">Positions</span>
+            </h2>
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+              Explore our current job openings and find your perfect role
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto space-y-4">
+            {openPositions.map((position) => (
+              <div
+                key={position.id}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+              >
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">{position.title}</h3>
+                  <p className="text-primary font-medium">{position.department}</p>
+                </div>
+                <div className="flex flex-wrap items-center gap-4">
+                  <span className="flex items-center gap-1 text-sm text-gray-600">
+                    <MapPin className="w-4 h-4" />
+                    {position.location}
+                  </span>
+                  <span className="flex items-center gap-1 text-sm text-gray-600">
+                    <Clock className="w-4 h-4" />
+                    {position.type}
+                  </span>
+                  <Button className="bg-primary hover:bg-primary/90 text-white">
+                    Apply Now
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <Zap className="w-12 h-12 text-primary mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Don't See the Right Role?
+            </h2>
+            <p className="text-gray-600 text-lg mb-8">
+              We're always looking for talented individuals. Send us your resume and we'll reach out when a suitable position opens up.
+            </p>
+            <Link to="/contact">
+              <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base">
+                Send Your Resume
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Careers;
