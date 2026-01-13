@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/", isRoute: true },
-    { name: "About", href: "/#about", isRoute: false },
+    { name: "About", href: "/about", isRoute: true },
     { name: "Services", href: "/services", isRoute: true },
     { name: "Portfolio", href: "/#portfolio", isRoute: false },
     { name: "Certification", href: "/#certification", isRoute: false },
