@@ -60,9 +60,9 @@ const AboutSection = () => {
 
           {/* Right Content - CEO Card with Image */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="relative rounded-2xl overflow-hidden max-w-md mx-auto">
               {/* CEO Image */}
-              <div className="aspect-[4/5] relative">
+              <div className="aspect-[3/4] relative">
                 <img 
                   src={ceoImage} 
                   alt="Mr. Kaptan - Founder & CEO" 
