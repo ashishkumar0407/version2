@@ -134,6 +134,39 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Industries We Serve */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Industries We <span className="text-primary">Serve</span>
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Delivering specialized solutions across diverse industry verticals
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              { name: "FinTech", description: "Financial technology solutions" },
+              { name: "Healthcare", description: "Medical and health management systems" },
+              { name: "Retail", description: "E-commerce and retail platforms" },
+              { name: "Education", description: "EdTech and learning management systems" },
+              { name: "Logistics", description: "Supply chain and logistics optimization" },
+              { name: "Startups", description: "MVP development and scaling solutions" },
+            ].map((industry, index) => (
+              <div 
+                key={index} 
+                className="bg-white rounded-xl border border-gray-100 p-6 hover:shadow-md transition-shadow duration-300"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{industry.name}</h3>
+                <p className="text-gray-500 text-sm">{industry.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 md:px-6 text-center">
