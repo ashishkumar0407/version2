@@ -141,6 +141,107 @@ const About = () => {
         </div>
       </section>
 
+      {/* Our Journey Timeline */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our <span className="text-primary">Journey</span>
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Key milestones in our growth and evolution
+            </p>
+          </div>
+
+          {/* Timeline */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200 hidden md:block" />
+
+            {/* Timeline Items */}
+            <div className="space-y-12 md:space-y-24">
+              {/* 2023 - Company Founded */}
+              <div className="relative flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
+                  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p className="text-2xl font-bold text-primary mb-2">2023</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Company Founded</h3>
+                    <p className="text-gray-500 text-sm">Bigbet.Ai was established with a vision to innovate digital solutions</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-primary hidden md:block" />
+                <div className="md:w-1/2 md:pl-12 order-1 md:order-2" />
+              </div>
+
+              {/* 2023 - First Major Project */}
+              <div className="relative flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-12 order-2 md:order-1" />
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-primary hidden md:block" />
+                <div className="md:w-1/2 md:pl-12 order-1 md:order-2">
+                  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p className="text-2xl font-bold text-primary mb-2">2023</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">First Major Project</h3>
+                    <p className="text-gray-500 text-sm">Successfully delivered our first enterprise-level software solution</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2024 - Global Expansion */}
+              <div className="relative flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
+                  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p className="text-2xl font-bold text-primary mb-2">2024</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Global Expansion</h3>
+                    <p className="text-gray-500 text-sm">Extended our services to international markets across 5 countries</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-primary hidden md:block" />
+                <div className="md:w-1/2 md:pl-12 order-1 md:order-2" />
+              </div>
+
+              {/* 2024 - AI Integration */}
+              <div className="relative flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-12 order-2 md:order-1" />
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-primary hidden md:block" />
+                <div className="md:w-1/2 md:pl-12 order-1 md:order-2">
+                  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p className="text-2xl font-bold text-primary mb-2">2024</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">AI Integration</h3>
+                    <p className="text-gray-500 text-sm">Launched AI and Machine Learning division with cutting-edge solutions</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2024 - 200+ Projects */}
+              <div className="relative flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
+                  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p className="text-2xl font-bold text-primary mb-2">2024</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">200+ Projects</h3>
+                    <p className="text-gray-500 text-sm">Reached milestone of 200+ successful projects across 15+ countries</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-primary hidden md:block" />
+                <div className="md:w-1/2 md:pl-12 order-1 md:order-2" />
+              </div>
+
+              {/* 2025 - Innovation Hub */}
+              <div className="relative flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-12 order-2 md:order-1" />
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-primary hidden md:block" />
+                <div className="md:w-1/2 md:pl-12 order-1 md:order-2">
+                  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p className="text-2xl font-bold text-primary mb-2">2025</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Innovation Hub</h3>
+                    <p className="text-gray-500 text-sm">Established innovation center focusing on emerging technologies</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 md:px-6">
