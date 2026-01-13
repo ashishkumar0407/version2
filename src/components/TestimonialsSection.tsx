@@ -8,21 +8,21 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      quote: "Outstanding cloud migration services. Bigbet.Ai helped us scale our infrastructure seamlessly while reducing costs by 40%.",
+      quote: "Outstanding cloud migration services. Bigbets.Ai helped us scale our infrastructure seamlessly while reducing costs by 40%.",
       name: "Emily Rodriguez",
       role: "VP Engineering, DataFlow",
       company: "DataFlow",
       avatar: "ER",
     },
     {
-      quote: "Bigbet.Ai delivered an exceptional AI-powered solution that transformed our business operations. Their expertise in machine learning is unmatched.",
+      quote: "Bigbets.Ai delivered an exceptional AI-powered solution that transformed our business operations. Their expertise in machine learning is unmatched.",
       name: "Sarah Johnson",
       role: "CTO, TechCorp",
       company: "TechCorp",
       avatar: "SJ",
     },
     {
-      quote: "Working with Bigbet.Ai was a game-changer for our startup. They built a scalable platform that handles millions of transactions seamlessly.",
+      quote: "Working with Bigbets.Ai was a game-changer for our startup. They built a scalable platform that handles millions of transactions seamlessly.",
       name: "Michael Chen",
       role: "CEO, FinanceHub",
       company: "FinanceHub",

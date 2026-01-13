@@ -44,7 +44,7 @@ const About = () => {
       <section className="pt-20 bg-primary">
         <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 italic">
-            About Bigbet.Ai
+            About Bigbets.Ai
           </h1>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
             Innovating Digital Solutions for a Smarter Future
@@ -59,7 +59,7 @@ const About = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Bigbet.Ai was founded with a simple yet powerful vision: to bridge the gap between innovative technology and real-world business solutions. Led by Mr. Kaptan, an experienced AI Engineer and visionary CEO, we have grown from a small startup to a globally recognized software development company.
+                Bigbets.Ai was founded with a simple yet powerful vision: to bridge the gap between innovative technology and real-world business solutions. Led by Mr. Kaptan, an experienced AI Engineer and visionary CEO, we have grown from a small startup to a globally recognized software development company.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 Our journey began in Ghaziabad, India, and has since expanded to serve clients across 15+ countries. With over 200 successful projects under our belt, we continue to push the boundaries of what's possible in software development, AI, and digital transformation.
@@ -166,7 +166,7 @@ const About = () => {
                   <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
                     <p className="text-2xl font-bold text-primary mb-2">2023</p>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">Company Founded</h3>
-                    <p className="text-gray-500 text-sm">Bigbet.Ai was established with a vision to innovate digital solutions</p>
+                    <p className="text-gray-500 text-sm">Bigbets.Ai was established with a vision to innovate digital solutions</p>
                   </div>
                 </div>
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-primary hidden md:block" />
@@ -265,7 +265,7 @@ const About = () => {
               <p className="text-primary font-medium mb-6">Founder & CEO, AI Engineer</p>
               
               <p className="text-gray-500 leading-relaxed mb-8 max-w-xl mx-auto">
-                Bigbet.Ai was founded in 2023 by Mr. Kaptan, a visionary entrepreneur passionate about technology and innovation. Under his leadership, the company focuses on cutting-edge solutions in Generative AI, Machine Learning, Cybersecurity, and Data Science. He is building Bigbet.Ai into a trusted name for next-generation software development and digital transformation.
+                Bigbets.Ai was founded in 2023 by Mr. Kaptan, a visionary entrepreneur passionate about technology and innovation. Under his leadership, the company focuses on cutting-edge solutions in Generative AI, Machine Learning, Cybersecurity, and Data Science. He is building Bigbets.Ai into a trusted name for next-generation software development and digital transformation.
               </p>
               
               {/* Contact Info */}

@@ -72,7 +72,7 @@ const Navbar = () => {
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className={`text-xl font-bold tracking-wide transition-colors duration-300 ${isScrolled ? "text-gray-900" : "text-white"}`}>Bigbet.Ai</span>
+              <span className={`text-xl font-bold tracking-wide transition-colors duration-300 ${isScrolled ? "text-gray-900" : "text-white"}`}>Bigbets.Ai</span>
               <span className={`text-[10px] tracking-[0.2em] transition-colors duration-300 ${isScrolled ? "text-gray-500" : "text-gray-300"}`}>INNOVATE | CONNECT | INSPIRE</span>
             </div>
           </a>
