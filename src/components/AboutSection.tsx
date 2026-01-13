@@ -33,10 +33,10 @@ const AboutSection = () => {
           {/* Left Content */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              About <span className="text-primary">Bigbet.Ai</span>
+              About <span className="text-primary">Bigbets.Ai</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-10">
-              Bigbet.Ai is a trusted IT partner offering cutting-edge solutions in software, web, mobile apps, cloud, and AI. With a client base in 15+ countries and 200+ successful projects, we help businesses scale with technology.
+              Bigbets.Ai is a trusted IT partner offering cutting-edge solutions in software, web, mobile apps, cloud, and AI. With a client base in 15+ countries and 200+ successful projects, we help businesses scale with technology.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
@@ -86,7 +86,7 @@ const AboutSection = () => {
                       <path d="M21 25 L21 28 L27 28 L27 25" fill="none" stroke="white" strokeWidth="2" />
                     </svg>
                   </div>
-                  <span className="text-white text-xs font-semibold tracking-wide">BIGBET.AI</span>
+                  <span className="text-white text-xs font-semibold tracking-wide">BIGBETS.AI</span>
                 </div>
 
                 {/* Glass Card Overlay */}

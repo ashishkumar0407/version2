@@ -54,7 +54,7 @@ const Footer = () => {
                 <span className="text-white font-bold text-lg">B</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-gray-900">BIGBET.AI</span>
+                <span className="text-lg font-bold text-gray-900">BIGBETS.AI</span>
                 <span className="text-[10px] text-gray-500 tracking-wider">INNOVATE | CONNECT | INSPIRE</span>
               </div>
             </a>
@@ -151,7 +151,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
-            © 2026 Bigbet.Ai. All rights reserved.
+            © 2026 Bigbets.Ai. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-primary hover:underline transition-colors">Privacy Policy</a>
