@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Code2, 
   Smartphone, 
@@ -105,9 +106,11 @@ const ServicesSection = () => {
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
-            View All Services
-          </Button>
+          <Link to="/services">
+            <Button variant="hero" size="lg">
+              View All Services
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
