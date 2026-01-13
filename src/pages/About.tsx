@@ -160,27 +160,35 @@ const About = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-primary">Leadership</span>
+              Meet Our <span className="text-primary">Leadership</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Meet the visionary behind Bigbet.Ai
+              Visionary leaders driving innovation and excellence
             </p>
           </div>
-          <div className="max-w-md mx-auto">
-            <div className="relative rounded-2xl overflow-hidden">
-              <div className="aspect-[3/4]">
-                <img 
-                  src={ceoImage} 
-                  alt="Mr. Kaptan - Founder & CEO" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                  <h3 className="text-2xl font-bold text-white mb-1">Mr. Kaptan</h3>
-                  <p className="text-primary text-sm mb-2">Founder & CEO, AI Engineer</p>
-                  <p className="text-white/70 text-sm">
-                    Leading innovation in digital transformation and AI solutions with a vision to empower businesses globally.
-                  </p>
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gray-50 rounded-2xl p-10 text-center">
+              {/* Avatar Circle */}
+              <div className="w-32 h-32 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
+                <span className="text-4xl font-bold text-primary">HK</span>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Mr. Kaptan</h3>
+              <p className="text-primary font-medium mb-6">Founder & CEO, AI Engineer</p>
+              
+              <p className="text-gray-500 leading-relaxed mb-8 max-w-xl mx-auto">
+                Bigbet.Ai was founded in 2023 by Mr. Kaptan, a visionary entrepreneur passionate about technology and innovation. Under his leadership, the company focuses on cutting-edge solutions in Generative AI, Machine Learning, Cybersecurity, and Data Science. He is building Bigbet.Ai into a trusted name for next-generation software development and digital transformation.
+              </p>
+              
+              {/* Contact Info */}
+              <div className="flex flex-wrap justify-center gap-6 text-gray-500 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <span>contact@bigbets.ai</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <span>+91 836 887 1848</span>
                 </div>
               </div>
             </div>
