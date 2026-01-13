@@ -129,7 +129,7 @@ const About = () => {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-gray-100 p-8 text-center shadow-sm">
+              <div key={index} className="bg-white rounded-2xl border border-gray-100 p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
                   <value.icon className="w-7 h-7 text-primary" />
                 </div>
