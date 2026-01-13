@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import testimonialAvatar from "@/assets/testimonial-avatar.png";
+
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const AUTO_SWIPE_INTERVAL = 5000; // 5 seconds
 
   const testimonials = [
     {
@@ -35,13 +37,22 @@ const TestimonialsSection = () => {
     },
   ];
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   const prevTestimonial = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+
+  // Auto-swipe effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextTestimonial();
+    }, AUTO_SWIPE_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [nextTestimonial]);
 
   const currentTestimonial = testimonials[currentIndex];
 
