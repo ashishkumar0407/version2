@@ -329,35 +329,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose <span className="text-primary">Bigbet.Ai?</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-              <Zap className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Fast Delivery</h3>
-              <p className="text-gray-500 text-sm">Quick turnaround without compromising quality</p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-              <Users className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Expert Team</h3>
-              <p className="text-gray-500 text-sm">Skilled professionals with diverse expertise</p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-              <Award className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Proven Results</h3>
-              <p className="text-gray-500 text-sm">200+ successful projects and counting</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
       <FloatingChatButton />
     </div>
