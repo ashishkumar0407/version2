@@ -1,6 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageCircle, Send } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Contact = () => {
   const contactMethods = [
@@ -27,6 +34,39 @@ const Contact = () => {
       title: "Working Hours",
       value: "Mon-Fri: 9:00 AM - 6:00 PM",
       description: "IST (Indian Standard Time)",
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "How long does a typical project take?",
+      answer:
+        "Project timelines vary based on complexity and scope. Simple projects may take 1-3 months, while complex enterprise solutions can take 6-12 months. We provide detailed timelines during the consultation phase.",
+    },
+    {
+      question: "Do you work with international clients?",
+      answer:
+        "Yes! We serve clients across 15+ countries and have experience working with different time zones, cultures, and business requirements. We provide remote collaboration and support.",
+    },
+    {
+      question: "What is your development process?",
+      answer:
+        "We follow an agile development methodology with regular client communication, iterative development, and continuous testing. This ensures transparency and allows for feedback throughout the project.",
+    },
+    {
+      question: "Do you provide ongoing support and maintenance?",
+      answer:
+        "Absolutely! We offer comprehensive support and maintenance packages to ensure your software continues to perform optimally. This includes bug fixes, updates, and feature enhancements.",
+    },
+    {
+      question: "Can you help with existing projects or legacy systems?",
+      answer:
+        "Yes, we specialize in legacy system modernization, code refactoring, and taking over existing projects. We can assess your current system and provide improvement recommendations.",
+    },
+    {
+      question: "What technologies do you specialize in?",
+      answer:
+        "We work with a wide range of modern technologies including React, Node.js, Python, Java, cloud platforms (AWS, Azure), AI/ML frameworks, and mobile development tools.",
     },
   ];
 
@@ -79,69 +119,241 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      {/* Contact Form & Office Info Section */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Send Us a <span className="text-primary">Message</span>
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                Send Us a Message
               </h2>
-              <p className="text-gray-600 mt-3">
-                Fill out the form below and we'll get back to you shortly
+              <p className="text-gray-600 mb-8">
+                Fill out the form below and we'll get back to you within 24 hours.
               </p>
+
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                      placeholder="Your company name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Service Interested In
+                  </label>
+                  <Select>
+                    <SelectTrigger className="w-full h-12 border-gray-200">
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="web-development">Web Development</SelectItem>
+                      <SelectItem value="mobile-development">Mobile Development</SelectItem>
+                      <SelectItem value="ai-ml">AI & Machine Learning</SelectItem>
+                      <SelectItem value="cloud-solutions">Cloud Solutions</SelectItem>
+                      <SelectItem value="cybersecurity">Cybersecurity</SelectItem>
+                      <SelectItem value="consulting">IT Consulting</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Budget Range
+                    </label>
+                    <Select>
+                      <SelectTrigger className="w-full h-12 border-gray-200">
+                        <SelectValue placeholder="Select budget range" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
+                        <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
+                        <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
+                        <SelectItem value="50k-100k">$50,000 - $100,000</SelectItem>
+                        <SelectItem value="100k+">$100,000+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Timeline
+                    </label>
+                    <Select>
+                      <SelectTrigger className="w-full h-12 border-gray-200">
+                        <SelectValue placeholder="Select timeline" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="1-3-months">1-3 months</SelectItem>
+                        <SelectItem value="3-6-months">3-6 months</SelectItem>
+                        <SelectItem value="6-12-months">6-12 months</SelectItem>
+                        <SelectItem value="ongoing">Ongoing</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Details <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+                    placeholder="Tell us about your project, goals, and any specific requirements..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                >
+                  <Send className="w-5 h-5" />
+                  Send Message
+                </button>
+              </form>
             </div>
 
-            <form className="space-y-6 bg-white p-8 rounded-xl shadow-sm">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
+            {/* Office Info Sidebar */}
+            <div className="space-y-6">
+              {/* Visit Our Office */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                  placeholder="How can we help?"
-                />
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Visit Our Office
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Located in the heart of Kanpur, our office is equipped with modern facilities
+                  and a collaborative environment. We welcome clients to visit us for in-person
+                  consultations and project discussions.
+                </p>
+
+                <div className="border border-gray-200 rounded-xl p-8 text-center bg-gray-50">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Bigbets.Ai Office</h3>
+                  <p className="text-gray-600 mb-4">Ramadevi, Kanpur, India</p>
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+                  >
+                    View on Google Maps
+                  </a>
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-                  placeholder="Tell us about your project..."
-                />
+
+              {/* Need Immediate Assistance */}
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Need Immediate Assistance?
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-gray-900">Call us directly</p>
+                      <p className="text-primary">+91 8052432951</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-gray-900">Chat with us</p>
+                      <p className="text-gray-600 text-sm">Use the chat widget in the bottom right</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-gray-900">Email us</p>
+                      <p className="text-primary">info@bigbets.ai</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <button
-                type="submit"
-                className="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+
+              {/* Our Response Promise */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Our Response Promise
+                </h3>
+                <p className="text-gray-600">
+                  We typically respond to all inquiries within 24 hours during business days. For
+                  urgent matters, please call us directly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Frequently Asked <span className="text-primary">Questions</span>
+            </h2>
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+              Quick answers to common questions about our services and process
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="p-6 border border-gray-100 rounded-xl hover:shadow-md transition-shadow"
               >
-                Send Message
-              </button>
-            </form>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
