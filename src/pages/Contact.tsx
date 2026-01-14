@@ -184,7 +184,7 @@ const Contact = () => {
                     Service Interested In
                   </label>
                   <Select>
-                    <SelectTrigger className="w-full h-12 border-gray-200">
+                    <SelectTrigger className="w-full h-12 border-gray-200 bg-white">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
@@ -204,7 +204,7 @@ const Contact = () => {
                       Budget Range
                     </label>
                     <Select>
-                      <SelectTrigger className="w-full h-12 border-gray-200">
+                      <SelectTrigger className="w-full h-12 border-gray-200 bg-white">
                         <SelectValue placeholder="Select budget range" />
                       </SelectTrigger>
                       <SelectContent>
@@ -221,7 +221,7 @@ const Contact = () => {
                       Timeline
                     </label>
                     <Select>
-                      <SelectTrigger className="w-full h-12 border-gray-200">
+                      <SelectTrigger className="w-full h-12 border-gray-200 bg-white">
                         <SelectValue placeholder="Select timeline" />
                       </SelectTrigger>
                       <SelectContent>
