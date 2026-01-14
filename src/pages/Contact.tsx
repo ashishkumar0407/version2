@@ -185,7 +185,7 @@ const Contact = () => {
                   </label>
                   <Select>
                     <SelectTrigger className="w-full h-12 border-gray-200 bg-white">
-                      <SelectValue placeholder="Select a service" />
+                      <SelectValue placeholder="Select a service" className="text-gray-500" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="web-development">Web Development</SelectItem>
@@ -205,7 +205,7 @@ const Contact = () => {
                     </label>
                     <Select>
                       <SelectTrigger className="w-full h-12 border-gray-200 bg-white">
-                        <SelectValue placeholder="Select budget range" />
+                        <SelectValue placeholder="Select budget range" className="text-gray-500" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
@@ -222,7 +222,7 @@ const Contact = () => {
                     </label>
                     <Select>
                       <SelectTrigger className="w-full h-12 border-gray-200 bg-white">
-                        <SelectValue placeholder="Select timeline" />
+                        <SelectValue placeholder="Select timeline" className="text-gray-500" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="1-3-months">1-3 months</SelectItem>
